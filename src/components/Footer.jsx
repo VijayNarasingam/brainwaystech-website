@@ -26,7 +26,8 @@ export default function Footer() {
           <div>
             <h4>Contact</h4>
             <div className="flinks">
-              <a href="mailto:vasanthsenthilkumar@brainwaystech.com">vasanthsenthilkumar@brainwaystech.com</a>
+              <a href="mailto:info@brainwaystechllp.com">info@brainwaystechllp.com</a>
+              <a href="tel:+917667924881">+91 76679 24881</a>
               <a href="tel:+919361061592">+91 93610 61592</a>
               <Link to="/contact">Krishnagiri, Tamil Nadu, IN</Link>
             </div>

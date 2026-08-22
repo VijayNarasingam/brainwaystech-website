@@ -138,6 +138,12 @@ export default function ContactForm() {
           <option>Web &amp; App Development</option>
           <option>Digital Marketing</option>
           <option>Video Editing</option>
+          <option>ERP Solutions</option>
+          <option>Cloud Solutions</option>
+          <option>Custom Software Development</option>
+          <option>Game Development</option>
+          <option>Data Analytics</option>
+          <option>AI Agents</option>
           <option>Something else</option>
         </select>
       </div>

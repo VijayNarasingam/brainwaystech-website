@@ -1,7 +1,6 @@
 # BrainwaysTech LLP — React Site
 
-A React + Vite port of the BrainwaysTech LLP multi-page site (Home, About, Services, Contact),
-converted from the original static HTML build with all features preserved:
+A modern React + Vite multi-page website for BrainwaysTech LLP (Home, About, Services, Contact) featuring:
 
 - Animated hero canvas (neural-network particle background)
 - Interactive tilting hero panel with 3 tabbed mini-mockups (Web/App, Marketing, Video)
