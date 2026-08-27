@@ -5,3 +5,6 @@ dist
 *.log
 .freebuff/
 --full-page
+
+.vercel
+.env*
