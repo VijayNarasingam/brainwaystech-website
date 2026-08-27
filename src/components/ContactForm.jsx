@@ -50,14 +50,12 @@ export default function ContactForm() {
     e.preventDefault()
 
     if (GOOGLE_FORM_ACTION.includes('REPLACE_WITH_YOUR_FORM_ID')) {
-      const msg = "This form isn't connected to a Google Form yet. See ContactForm.jsx to configure it."
-      setStatus({ type: 'error', text: msg })
+      setStatus({ type: 'error', text: "This form isn't connected to a Google Form yet. See ContactForm.jsx to configure it." })
       return
     }
 
     if (!formRef.current.checkValidity()) {
-      const msg = 'Please fill in all required fields before sending.'
-      setStatus({ type: 'error', text: msg })
+      setStatus({ type: 'error', text: 'Please fill in all required fields before sending.' })
       formRef.current.reportValidity()
       return
     }
@@ -66,28 +64,36 @@ export default function ContactForm() {
     setStatus(null)
 
     const iframe = iframeRef.current
+    let completed = false
+
     const timeout = setTimeout(() => {
-      onError()
+      if (!completed) {
+        completed = true
+        onError()
+      }
     }, 15000)
 
     iframe.onload = () => {
+      if (completed) return
+      completed = true
       clearTimeout(timeout)
       onSuccess()
     }
 
-    const fd = new FormData(formRef.current)
-    fd.set(ENTRY_MAP.phone, `${values.countryCode} ${values.phone}`)
-    fd.set(ENTRY_MAP.name, values.name)
-    fd.set(ENTRY_MAP.email, values.email)
-    fd.set(ENTRY_MAP.service, values.service)
-    fd.set(ENTRY_MAP.message, values.message)
+    // Build form data using semantic values mapped to Google Form entry IDs
+    const formData = new FormData()
+    formData.set(ENTRY_MAP.name, values.name.trim())
+    formData.set(ENTRY_MAP.email, values.email.trim())
+    formData.set(ENTRY_MAP.phone, `${values.countryCode} ${values.phone.trim()}`)
+    formData.set(ENTRY_MAP.service, values.service)
+    formData.set(ENTRY_MAP.message, values.message.trim())
 
     const tempForm = document.createElement('form')
     tempForm.style.display = 'none'
     tempForm.method = 'POST'
     tempForm.action = GOOGLE_FORM_ACTION
     tempForm.target = 'gform-iframe'
-    for (const [key, val] of fd.entries()) {
+    for (const [key, val] of formData.entries()) {
       const input = document.createElement('input')
       input.name = key
       input.value = val
@@ -95,7 +101,10 @@ export default function ContactForm() {
     }
     document.body.appendChild(tempForm)
     tempForm.submit()
-    document.body.removeChild(tempForm)
+    // Keep in DOM briefly for submission to complete
+    setTimeout(() => {
+      if (tempForm.parentNode) document.body.removeChild(tempForm)
+    }, 1000)
   }
 
   function onSuccess() {
@@ -106,35 +115,34 @@ export default function ContactForm() {
 
   function onError() {
     setSending(false)
-    const msg = 'Something went wrong sending your message. Please try again or email us directly.'
-    setStatus({ type: 'error', text: msg })
+    setStatus({ type: 'error', text: 'Something went wrong sending your message. Please try again or email us directly.' })
   }
 
   return (
-    <form className="form" ref={formRef} onSubmit={handleSubmit}>
-      <iframe ref={iframeRef} name="gform-iframe" style={{ display: 'none' }} title="Form submission" />
+    <form className="form" ref={formRef} onSubmit={handleSubmit} noValidate>
+      <iframe ref={iframeRef} name="gform-iframe" style={{ display: 'none' }} title="Form submission" tabIndex={-1} aria-hidden="true" />
       <div>
         <label htmlFor="name">Full name</label>
-        <input id="name" name={ENTRY_MAP.name} type="text" placeholder="Your name" value={values.name} onChange={update} required />
+        <input id="name" name="name" type="text" placeholder="Your name" value={values.name} onChange={update} required autoComplete="name" aria-required="true" />
       </div>
       <div>
         <label htmlFor="email">Email</label>
-        <input id="email" name={ENTRY_MAP.email} type="email" placeholder="you@company.com" value={values.email} onChange={update} required />
+        <input id="email" name="email" type="email" placeholder="you@company.com" value={values.email} onChange={update} required autoComplete="email" aria-required="true" />
       </div>
       <div>
         <label htmlFor="phone">Phone number</label>
         <div className="phone-row">
-          <select id="countryCode" name="countryCode" value={values.countryCode} onChange={update} className="country-select">
+          <select id="countryCode" name="countryCode" value={values.countryCode} onChange={update} className="country-select" aria-label="Country code">
             {COUNTRY_CODES.map((c) => (
               <option key={c.code} value={c.code}>{c.label}</option>
             ))}
           </select>
-          <input id="phone" name={ENTRY_MAP.phone} type="tel" placeholder="98765 43210" value={values.phone} onChange={update} className="phone-input" />
+          <input id="phone" name="phone" type="tel" placeholder="98765 43210" value={values.phone} onChange={update} className="phone-input" autoComplete="tel" inputMode="numeric" pattern="[0-9 ]*" />
         </div>
       </div>
       <div>
         <label htmlFor="service">Service interested in</label>
-        <select id="service" name={ENTRY_MAP.service} value={values.service} onChange={update}>
+        <select id="service" name="service" value={values.service} onChange={update}>
           <option>Web &amp; App Development</option>
           <option>Digital Marketing</option>
           <option>Video Editing</option>
@@ -151,18 +159,20 @@ export default function ContactForm() {
         <label htmlFor="message">Project details</label>
         <textarea
           id="message"
-          name={ENTRY_MAP.message}
+          name="message"
           placeholder="Tell us a bit about what you're building..."
           value={values.message}
           onChange={update}
           required
+          aria-required="true"
+          rows={5}
         ></textarea>
       </div>
-      <button type="submit" className="btn-primary" style={{ justifyContent: 'center' }} disabled={sending}>
+      <button type="submit" className="btn-primary" style={{ justifyContent: 'center' }} disabled={sending} aria-busy={sending}>
         {sending ? 'Sending...' : 'Send message →'}
       </button>
       {status && (
-        <p role="alert" style={{ fontSize: '13.5px', marginTop: '4px', color: status.type === 'success' ? '#2ecc71' : 'var(--primary)' }}>
+        <p role="alert" className={`form-status ${status.type}`}>
           {status.text}
         </p>
       )}

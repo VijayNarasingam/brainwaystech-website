@@ -8,21 +8,11 @@ import Reveal from '../components/Reveal.jsx'
 import { useParallax } from '../hooks/useParallax.js'
 import { HOME_TECH } from '../data/techStack.js'
 
-const homeStyles = `
-  html[data-theme="light"] .home-tech-grid .tech-card h5 {
-    color: #1F2937;
-  }
-  html[data-theme="light"] .home-tech-grid .tech-card .cat {
-    color: #6B7280;
-  }
-`
-
 export default function Home() {
   const gridRef = useParallax(0.06)
 
   return (
     <>
-      <style>{homeStyles}</style>
       <section className="section-light hero" id="home">
         <div className="hero-grid" ref={gridRef}></div>
         <HeroCanvas />

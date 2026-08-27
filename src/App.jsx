@@ -16,12 +16,12 @@ import NotFound from './pages/NotFound.jsx'
 export default function App() {
   return (
     <ThemeProvider>
-      <a href="#main-content" className="skip-link">Skip to content</a>
-      <CustomCursor />
-      <ScrollToTop />
-      <Navbar />
-      <main id="main-content">
-        <ErrorBoundary>
+      <ErrorBoundary>
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <CustomCursor />
+        <ScrollToTop />
+        <Navbar />
+        <main id="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -29,11 +29,11 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </ErrorBoundary>
-      </main>
-      <Footer />
-      <WhatsAppWidget />
-      <ScrollTopButton />
+        </main>
+        <Footer />
+        <WhatsAppWidget />
+        <ScrollTopButton />
+      </ErrorBoundary>
     </ThemeProvider>
   )
 }
