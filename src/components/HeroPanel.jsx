@@ -55,7 +55,7 @@ export default function HeroPanel() {
                 </div>
               </div>
               <div className="panel-copy">
-                <p>Clean, responsive builds — from marketing sites to full product platforms.</p>
+                <p>Clean, responsive builds - from marketing sites to full product platforms.</p>
               </div>
             </div>
           )}

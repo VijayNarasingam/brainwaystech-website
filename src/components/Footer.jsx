@@ -11,7 +11,7 @@ export default function Footer() {
               <img src={logoIcon} alt="BrainwaysTech Logo" style={{ height: '36px', width: 'auto' }} /> BrainwaysTech
             </div>
             <p style={{ fontSize: '14px', lineHeight: '1.6', maxWidth: '320px' }}>
-              Your one-stop destination for AI, web, app, and digital marketing solutions — built
+              Your one-stop destination for AI, web, app, and digital marketing solutions - built
               with integrity, delivered with care.
             </p>
           </div>

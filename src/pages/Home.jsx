@@ -50,7 +50,7 @@ export default function Home() {
                 <div className="eyebrow">Who we are</div>
                 <h2>Intelligent solutions, built on an ethical foundation.</h2>
                 <p>
-                  We're a small, forward-thinking IT partner — helping businesses turn ambitious ideas
+                  We're a small, forward-thinking IT partner - helping businesses turn ambitious ideas
                   into dependable products, without losing sight of who they're built for.
                 </p>
                 <Link
@@ -76,12 +76,12 @@ export default function Home() {
             <div className="section-head">
               <div className="eyebrow">Core services</div>
               <h2>What we build</h2>
-              <p>Tailored IT solutions for businesses of every size — from first prototype to full-scale platform.</p>
+              <p>Tailored IT solutions for businesses of every size - from first prototype to full-scale platform.</p>
             </div>
           </Reveal>
           <div className="cards-3">
             <Reveal from="zoom"><div className="service-card" data-num="01"><div className="service-num">01</div><h3>Web &amp; App Development</h3><p>Responsive websites and mobile apps, built clean and modern for performance that holds up under real traffic.</p></div></Reveal>
-            <Reveal from="zoom" delay={120}><div className="service-card" data-num="02"><div className="service-num">02</div><h3>Digital Marketing</h3><p>SEO, paid campaigns, social, and content strategy — engineered to boost visibility and turn attention into leads.</p></div></Reveal>
+            <Reveal from="zoom" delay={120}><div className="service-card" data-num="02"><div className="service-num">02</div><h3>Digital Marketing</h3><p>SEO, paid campaigns, social, and content strategy - engineered to boost visibility and turn attention into leads.</p></div></Reveal>
             <Reveal from="zoom" delay={240}><div className="service-card" data-num="03"><div className="service-num">03</div><h3>Video Editing</h3><p>Professional social edits that turn raw footage into Reels, Shorts, and Stories worth stopping for.</p></div></Reveal>
           </div>
           <Link to="/services" className="btn-primary" style={{ marginTop: '44px', display: 'inline-flex' }}>
@@ -99,7 +99,7 @@ export default function Home() {
             </div>
           </Reveal>
           <div className="pillars">
-            <Reveal><div className="pillar"><div className="pillar-mark">01</div><h4>You talk to the builders</h4><p>No account-manager layers — the person you brief is the person writing the code and reviewing the pixels.</p></div></Reveal>
+            <Reveal><div className="pillar"><div className="pillar-mark">01</div><h4>You talk to the builders</h4><p>No account-manager layers - the person you brief is the person writing the code and reviewing the pixels.</p></div></Reveal>
             <Reveal><div className="pillar"><div className="pillar-mark">02</div><h4>Transparent, fixed-scope quotes</h4><p>You know what you're paying for before we start. No surprise line items, no scope creep.</p></div></Reveal>
             <Reveal><div className="pillar"><div className="pillar-mark">03</div><h4>Built to grow with you</h4><p>Clean architecture and documented handover, so the platform we ship today still serves you two years from now.</p></div></Reveal>
           </div>
@@ -112,14 +112,14 @@ export default function Home() {
             <div className="section-head">
               <div className="eyebrow">Our process</div>
               <h2>From first call to launch in four clear steps</h2>
-              <p>One clear path, so you always know what happens next — and why.</p>
+              <p>One clear path, so you always know what happens next - and why.</p>
             </div>
           </Reveal>
           <div className="process-list">
-            <Reveal delay={0}><div className="process-step"><span className="step-idx">01</span><h4>Discover</h4><p>We map your goals, audience, and constraints — and turn them into a clear, scoped brief you approve.</p></div></Reveal>
-            <Reveal delay={100}><div className="process-step"><span className="step-idx">02</span><h4>Design</h4><p>Wireframes and visual direction first — you see the look before a line of code is written.</p></div></Reveal>
+            <Reveal delay={0}><div className="process-step"><span className="step-idx">01</span><h4>Discover</h4><p>We map your goals, audience, and constraints - and turn them into a clear, scoped brief you approve.</p></div></Reveal>
+            <Reveal delay={100}><div className="process-step"><span className="step-idx">02</span><h4>Design</h4><p>Wireframes and visual direction first - you see the look before a line of code is written.</p></div></Reveal>
             <Reveal delay={200}><div className="process-step"><span className="step-idx">03</span><h4>Build</h4><p>Clean, responsive development with weekly progress updates, so you're never in the dark.</p></div></Reveal>
-            <Reveal delay={300}><div className="process-step"><span className="step-idx">04</span><h4>Grow</h4><p>Launch, measure, and iterate — SEO, analytics, and support that keep improving results after go-live.</p></div></Reveal>
+            <Reveal delay={300}><div className="process-step"><span className="step-idx">04</span><h4>Grow</h4><p>Launch, measure, and iterate - SEO, analytics, and support that keep improving results after go-live.</p></div></Reveal>
           </div>
         </div>
       </section>
@@ -155,7 +155,7 @@ export default function Home() {
           <div className="faq-list">
             <details className="faq-item">
               <summary>How much does a project cost?</summary>
-              <div className="faq-a">Every project gets a fixed, itemised quote after a free discovery call. Most engagements range from small landing pages to full-scale platforms — we'll scope exactly what fits your budget.</div>
+              <div className="faq-a">Every project gets a fixed, itemised quote after a free discovery call. Most engagements range from small landing pages to full-scale platforms - we'll scope exactly what fits your budget.</div>
             </details>
             <details className="faq-item">
               <summary>How long does a typical build take?</summary>
@@ -163,11 +163,11 @@ export default function Home() {
             </details>
             <details className="faq-item">
               <summary>Do you offer support after launch?</summary>
-              <div className="faq-a">Yes — every project includes a post-launch support window, plus optional care plans for hosting, updates, and ongoing improvements.</div>
+              <div className="faq-a">Yes - every project includes a post-launch support window, plus optional care plans for hosting, updates, and ongoing improvements.</div>
             </details>
             <details className="faq-item">
               <summary>Do you work with small businesses?</summary>
-              <div className="faq-a">Absolutely. We were built to serve businesses big agencies overlook — no minimum project size, and you work directly with the team.</div>
+              <div className="faq-a">Absolutely. We were built to serve businesses big agencies overlook - no minimum project size, and you work directly with the team.</div>
             </details>
           </div>
         </div>
@@ -179,7 +179,7 @@ export default function Home() {
             <div className="eyebrow" style={{ justifyContent: 'center' }}>Ready when you are</div>
             <h2>Ready to elevate your business?</h2>
             <p style={{ color: 'var(--color-text-secondary)' }}>
-              Tell us what you're building — we'll map out how smart technology gets you there faster.
+              Tell us what you're building - we'll map out how smart technology gets you there faster.
             </p>
             <Link to="/contact" className="btn-primary">Contact Us →</Link>
           </div>

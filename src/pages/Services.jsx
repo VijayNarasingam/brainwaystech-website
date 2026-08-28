@@ -124,7 +124,7 @@ export default function Services() {
             <div className="section-head">
               <div className="eyebrow">Tech stack</div>
               <h2>The tools behind the build</h2>
-              <p>Fast, scalable, modern — the stack we reach for depends on the job, not habit. Click a card, hover to explore.</p>
+              <p>Fast, scalable, modern - the stack we reach for depends on the job, not habit. Click a card, hover to explore.</p>
             </div>
           </Reveal>
           <TechGrid items={TECH_STACK} />
@@ -153,7 +153,7 @@ export default function Services() {
           <div className="wrap cta-box">
             <div className="eyebrow" style={{ justifyContent: 'center' }}>Next step</div>
             <h2>Have a project brief ready?</h2>
-            <p>Send it over — we'll come back with scope, timeline, and next steps.</p>
+            <p>Send it over - we'll come back with scope, timeline, and next steps.</p>
             <Link to="/contact" className="btn-primary">Get a quote →</Link>
           </div>
         </Reveal>

@@ -32,7 +32,7 @@ export default function About() {
               <h2>Registered, active, and hands-on</h2>
               <p style={{ color: 'var(--muted)' }}>
                 BrainwaysTech LLP was incorporated on 10 March 2024 and operates as a Limited Liability
-                Partnership out of Krishnagiri, Tamil Nadu — working across computer programming,
+                Partnership out of Krishnagiri, Tamil Nadu - working across computer programming,
                 consultancy, and related digital services for clients across India.
               </p>
             </div>
@@ -50,8 +50,8 @@ export default function About() {
           </Reveal>
           <div className="pillars">
             <Reveal><div className="pillar"><div className="pillar-mark">VS</div><h4>Vasanth Senthilkumar</h4><p>Designated Partner, leading technology delivery and client engagements.</p></div></Reveal>
-            <Reveal><div className="pillar"><div className="pillar-mark">RM</div><h4>Rajendran Mugilesh</h4><p>Designated Partner, overseeing operations and business development.</p></div></Reveal>
-            <Reveal><div className="pillar"><div className="pillar-mark">★</div><h4>Small team, direct access</h4><p>No account-manager layers — you work directly with the people building your product.</p></div></Reveal>
+            <Reveal><div className="pillar"><div className="pillar-mark">RM</div><h4>Mugilesh Rajendran</h4><p>Designated Partner, overseeing operations and business development.</p></div></Reveal>
+            <Reveal><div className="pillar"><div className="pillar-mark">★</div><h4>Small team, direct access</h4><p>No account-manager layers - you work directly with the people building your product.</p></div></Reveal>
           </div>
           <Reveal from="zoom">
             <div className="stat-strip">
@@ -92,7 +92,7 @@ export default function About() {
           <div className="wrap cta-box">
             <div className="eyebrow" style={{ justifyContent: 'center' }}>Let's build together</div>
             <h2>Curious how we'd approach your project?</h2>
-            <p style={{ color: 'var(--muted)' }}>Get in touch and we'll walk you through it — no obligation, just a clear next step.</p>
+            <p style={{ color: 'var(--muted)' }}>Get in touch and we'll walk you through it - no obligation, just a clear next step.</p>
             <Link to="/contact" className="btn-primary">Talk to us →</Link>
           </div>
         </Reveal>
