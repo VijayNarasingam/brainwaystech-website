@@ -5,7 +5,6 @@ A modern React + Vite multi-page website for BrainwaysTech LLP (Home, About, Ser
 - Animated hero canvas (neural-network particle background)
 - Interactive tilting hero panel with 3 tabbed mini-mockups (Web/App, Marketing, Video)
 - Dark/light mode toggle (top-right of navbar)
-- Custom cursor (dot + lagging ring, grows on hover)
 - Interactive tech-stack cards (scroll-reveal, hover lift, click-pulse) on Home + Services
 - Auto-scrolling "Trusted by" client marquee (About)
 - Scroll-reveal testimonial cards, "What our clients say" (About)
@@ -72,12 +71,37 @@ src/
   App.jsx              routes + shared layout (navbar, footer, widgets)
   context/ThemeContext.jsx   dark/light state
   hooks/useReveal.js         scroll-reveal IntersectionObserver hook
-  data/                      tech stack, testimonials, trusted clients
+  hooks/useParallax.js       hero-grid parallax hook
+  data/                      tech stack, testimonials, service landing pages
   components/                Navbar, Footer, HeroCanvas, HeroPanel, TechGrid,
                               TrustedMarquee, Testimonials, ContactForm,
-                              WhatsAppWidget, CustomCursor, SynapseDivider, ScrollToTop
-  pages/                      Home, About, Services, Contact
+                              WhatsAppWidget, SynapseDivider, ScrollToTop,
+                              ServiceLanding
+  pages/                      Home, About, Services, Contact, NotFound + 5 service
+                              landing pages
   styles/global.css           full design system (colors, type, components)
+```
+
+## Service landing pages
+
+Five independent landing pages, each functioning as its own standalone home
+page for that service. They live at dedicated URLs (shared directly — ads,
+WhatsApp, business cards) and are not linked from the Services page:
+
+| Route | Page |
+| --- | --- |
+| `/website-development` | Website Development |
+| `/mobile-app-development` | Mobile App Development |
+| `/video-editing-services` | Video Editing Services |
+| `/digital-marketing-services` | Digital Marketing Services |
+| `/web-applications-development` | Web Applications Development |
+
+Each page shares the `ServiceLanding` template (hero with animated mockup,
+trusted-by marquee, problem → before/after, types, deliverables, case studies,
+why-us, process, testimonials, FAQs, and a free-consultation form). **All copy
+lives in `src/data/servicePages.js`** — edit it there, no component changes
+needed. Case studies, testimonials, and the WhatsApp number remain
+configurable in `src/data/testimonials.js` and `WhatsAppWidget.jsx`.
 ```
 
 All contact details (email, phone, office address) currently reflect what's publicly

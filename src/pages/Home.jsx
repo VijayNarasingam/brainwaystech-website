@@ -178,7 +178,7 @@ export default function Home() {
           <div className="wrap cta-box">
             <div className="eyebrow" style={{ justifyContent: 'center' }}>Ready when you are</div>
             <h2>Ready to elevate your business?</h2>
-            <p style={{ color: 'var(--color-text-secondary)' }}>
+            <p style={{ color: 'var(--color-text-inverse-secondary)' }}>
               Tell us what you're building - we'll map out how smart technology gets you there faster.
             </p>
             <Link to="/contact" className="btn-primary">Contact Us →</Link>
