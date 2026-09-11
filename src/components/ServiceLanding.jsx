@@ -165,6 +165,24 @@ function HeroVisual({ service }) {
   )
 }
 
+function BaVisual({ mock, tone }) {
+  const isBefore = tone === 'before'
+  return (
+    <div
+      className={`ba-visual ba-visual-${mock} ${isBefore ? 'is-before' : 'is-after'}`}
+      aria-hidden="true"
+    >
+      <div className="ba-mock-stage">
+        <HeroMock mock={mock} />
+      </div>
+      <span className={`ba-visual-pill ${isBefore ? 'is-before-pill' : 'is-after-pill'}`}>
+        <span className="ba-visual-dot"></span>
+        {isBefore ? 'Needs fix' : 'Fixed'}
+      </span>
+    </div>
+  )
+}
+
 function ProblemSection({ problem }) {
   return (
     <section className="section-light section-glow">
@@ -192,6 +210,7 @@ function ProblemSection({ problem }) {
 }
 
 function TransformationSection({ transformation }) {
+  const visual = transformation.visual || 'browser'
   return (
     <section className="section-dark" id="transformation">
       <div className="wrap">
@@ -203,8 +222,9 @@ function TransformationSection({ transformation }) {
           </div>
         </Reveal>
         <div className="ba-grid">
-          <Reveal from="left">
+          <Reveal from="left" className="ba-reveal">
             <div className="ba-card ba-before">
+              <BaVisual mock={visual} tone="before" />
               <div className="ba-label">Before</div>
               <ul>
                 {transformation.before.map((item, i) => (
@@ -213,9 +233,10 @@ function TransformationSection({ transformation }) {
               </ul>
             </div>
           </Reveal>
-          <div className="ba-arrow">{ARROW}</div>
-          <Reveal from="right">
+          <div className="ba-arrow" aria-hidden="true">{ARROW}</div>
+          <Reveal from="right" className="ba-reveal">
             <div className="ba-card ba-after">
+              <BaVisual mock={visual} tone="after" />
               <div className="ba-label">After</div>
               <ul>
                 {transformation.after.map((item, i) => (
