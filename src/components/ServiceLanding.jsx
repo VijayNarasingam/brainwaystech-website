@@ -147,6 +147,216 @@ function HeroMock({ mock }) {
   return <BrowserMock />
 }
 
+/* ---- Paired drawback (Before) vs solved (After) 3D mocks ---- */
+function BaBrowserBefore() {
+  return (
+    <div className="lp-browser ba-broken">
+      <div className="browser-bar"><span></span><span></span><span></span><span className="ba-load-tag">6s+ slow</span></div>
+      <div className="lp-browser-body">
+        <div className="lp-browser-hero is-broken">
+          <div>
+            <Skeleton w="w-60" />
+            <Skeleton w="w-45" />
+            <div className="lp-browser-btn is-disabled"></div>
+          </div>
+          <div className="lp-browser-card is-missing">
+            <Skeleton w="w-70" />
+            <span className="ba-missing">no CTA</span>
+          </div>
+        </div>
+        <div className="ba-error-row">
+          <span className="ba-warn">Not mobile-friendly</span>
+          <span className="ba-warn">Invisible on Google</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function BaBrowserAfter() {
+  return (
+    <div className="lp-browser ba-fixed">
+      <div className="browser-bar"><span></span><span></span><span></span><span className="ba-ok-tag">&lt;2s fast</span></div>
+      <div className="lp-browser-body">
+        <div className="lp-browser-hero">
+          <div>
+            <Skeleton w="w-80" />
+            <Skeleton w="w-60" />
+            <div className="lp-browser-btn"></div>
+          </div>
+          <div className="lp-browser-card">
+            <Skeleton w="w-95" />
+            <Skeleton w="w-80" />
+          </div>
+        </div>
+        <div className="lp-caption-row">
+          <span className="lp-caption">SEO ready</span>
+          <span className="lp-caption">Clear CTAs</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function BaPhoneBefore() {
+  return (
+    <div className="lp-phone ba-broken">
+      <div className="lp-phone-notch"></div>
+      <div className="lp-phone-screen is-dim">
+        <div className="lp-phone-head">
+          <Skeleton w="w-60" />
+          <div className="lp-phone-ava"></div>
+        </div>
+        <div className="lp-phone-card is-crash"><Skeleton w="w-70" /><span className="ba-missing">crashes</span></div>
+        <div className="lp-phone-card is-empty"><Skeleton w="w-45" /></div>
+        <div className="ba-os-tag">1 OS only</div>
+      </div>
+    </div>
+  )
+}
+
+function BaPhoneAfter() {
+  return (
+    <div className="lp-phone ba-fixed">
+      <div className="lp-phone-notch"></div>
+      <div className="lp-phone-screen">
+        <div className="lp-phone-head">
+          <Skeleton w="w-60" />
+          <div className="lp-phone-ava"></div>
+        </div>
+        <div className="lp-phone-card"><Skeleton w="w-80" /><Skeleton w="w-45" /></div>
+        <div className="lp-mini-bars" aria-hidden="true"><span style={{ '--h': '40%' }}></span><span style={{ '--h': '70%' }}></span><span style={{ '--h': '55%' }}></span><span style={{ '--h': '90%' }}></span></div>
+        <div className="lp-phone-btn"></div>
+        <div className="ba-os-tag is-ok">iOS + Android</div>
+      </div>
+    </div>
+  )
+}
+
+function BaVideoBefore() {
+  return (
+    <div className="lp-video ba-broken">
+      <div className="video-mock is-dull">
+        <div className="play-btn is-paused">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+        </div>
+        <span className="lp-video-tag">No hook · skipped</span>
+      </div>
+      <div className="scrub"><div className="scrub-fill is-low"></div></div>
+      <div className="ba-error-row">
+        <span className="ba-warn">No captions</span>
+        <span className="ba-warn">Off-brand</span>
+      </div>
+    </div>
+  )
+}
+
+function BaVideoAfter() {
+  return (
+    <div className="lp-video ba-fixed">
+      <div className="video-mock">
+        <div className="play-btn">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+        </div>
+        <span className="lp-video-tag">Reel · 4K</span>
+      </div>
+      <div className="scrub"><div className="scrub-fill"></div></div>
+      <div className="lp-caption-row">
+        <span className="lp-caption">Captions on</span>
+        <span className="lp-caption">Hook-first</span>
+        <span className="lp-caption">Watched to end</span>
+      </div>
+    </div>
+  )
+}
+
+function BaChartBefore() {
+  return (
+    <div className="lp-chart ba-broken">
+      <div className="chart-mock is-flat">
+        <div className="bar" style={{ '--h': '28%' }}></div>
+        <div className="bar" style={{ '--h': '24%' }}></div>
+        <div className="bar" style={{ '--h': '30%' }}></div>
+        <div className="bar" style={{ '--h': '22%' }}></div>
+        <div className="bar" style={{ '--h': '26%' }}></div>
+        <div className="bar" style={{ '--h': '20%' }}></div>
+        <div className="bar" style={{ '--h': '25%' }}></div>
+      </div>
+      <div className="ba-error-row">
+        <span className="ba-warn">Spend ↑</span>
+        <span className="ba-warn">Returns →</span>
+        <span className="ba-warn">No tracking</span>
+      </div>
+    </div>
+  )
+}
+
+function BaChartAfter() {
+  return (
+    <div className="lp-chart ba-fixed">
+      <div className="chart-mock">
+        <div className="bar" style={{ '--h': '34%' }}></div>
+        <div className="bar" style={{ '--h': '48%' }}></div>
+        <div className="bar" style={{ '--h': '58%' }}></div>
+        <div className="bar" style={{ '--h': '44%' }}></div>
+        <div className="bar" style={{ '--h': '72%' }}></div>
+        <div className="bar" style={{ '--h': '64%' }}></div>
+        <div className="bar" style={{ '--h': '92%' }}></div>
+      </div>
+      <div className="lp-kpi-row">
+        <div className="lp-kpi"><span className="lp-kpi-num">+212%</span><Skeleton w="w-80" /></div>
+        <div className="lp-kpi"><span className="lp-kpi-num">4.6×</span><Skeleton w="w-60" /></div>
+      </div>
+    </div>
+  )
+}
+
+function BaDashboardBefore() {
+  return (
+    <div className="lp-browser ba-broken">
+      <div className="browser-bar"><span></span><span></span><span></span><span className="ba-load-tag">scattered</span></div>
+      <div className="lp-table is-messy">
+        <Skeleton w="w-60" />
+        <Skeleton w="w-95" />
+        <Skeleton w="w-45" />
+        <Skeleton w="w-80" />
+      </div>
+      <div className="ba-error-row">
+        <span className="ba-warn">Excel chaos</span>
+        <span className="ba-warn">No visibility</span>
+      </div>
+    </div>
+  )
+}
+
+function BaDashboardAfter() {
+  return (
+    <div className="lp-browser ba-fixed">
+      <div className="browser-bar"><span></span><span></span><span></span><span className="ba-ok-tag">live</span></div>
+      <div className="lp-dash">
+        <div className="lp-dash-side">
+          <Skeleton w="w-80" />
+          <Skeleton w="w-60" />
+          <Skeleton w="w-70" />
+        </div>
+        <div className="lp-dash-main">
+          <div className="chart-mock" style={{ height: '72px' }}>
+            <div className="bar" style={{ '--h': '40%' }}></div>
+            <div className="bar" style={{ '--h': '65%' }}></div>
+            <div className="bar" style={{ '--h': '50%' }}></div>
+            <div className="bar" style={{ '--h': '80%' }}></div>
+            <div className="bar" style={{ '--h': '70%' }}></div>
+          </div>
+          <div className="lp-table">
+            <Skeleton w="w-95" />
+            <Skeleton w="w-85" />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function HeroVisual({ service }) {
   const { mock, floats } = service.hero
   return (
@@ -165,19 +375,29 @@ function HeroVisual({ service }) {
   )
 }
 
-function BaVisual({ mock, tone }) {
+function BaMock({ mock, tone }) {
   const isBefore = tone === 'before'
+  if (mock === 'phone') return isBefore ? <BaPhoneBefore /> : <BaPhoneAfter />
+  if (mock === 'video') return isBefore ? <BaVideoBefore /> : <BaVideoAfter />
+  if (mock === 'chart') return isBefore ? <BaChartBefore /> : <BaChartAfter />
+  if (mock === 'dashboard') return isBefore ? <BaDashboardBefore /> : <BaDashboardAfter />
+  return isBefore ? <BaBrowserBefore /> : <BaBrowserAfter />
+}
+
+function BaVisual({ mock, tone, beforeTag, afterTag }) {
+  const isBefore = tone === 'before'
+  const pill = isBefore ? (beforeTag || 'Needs fix') : (afterTag || 'Fixed')
   return (
     <div
       className={`ba-visual ba-visual-${mock} ${isBefore ? 'is-before' : 'is-after'}`}
       aria-hidden="true"
     >
       <div className="ba-mock-stage">
-        <HeroMock mock={mock} />
+        <BaMock mock={mock} tone={tone} />
       </div>
       <span className={`ba-visual-pill ${isBefore ? 'is-before-pill' : 'is-after-pill'}`}>
         <span className="ba-visual-dot"></span>
-        {isBefore ? 'Needs fix' : 'Fixed'}
+        {pill}
       </span>
     </div>
   )
@@ -211,6 +431,8 @@ function ProblemSection({ problem }) {
 
 function TransformationSection({ transformation }) {
   const visual = transformation.visual || 'browser'
+  const beforeTag = transformation.beforeTag
+  const afterTag = transformation.afterTag
   return (
     <section className="section-dark" id="transformation">
       <div className="wrap">
@@ -224,7 +446,7 @@ function TransformationSection({ transformation }) {
         <div className="ba-grid">
           <Reveal from="left" className="ba-reveal">
             <div className="ba-card ba-before">
-              <BaVisual mock={visual} tone="before" />
+              <BaVisual mock={visual} tone="before" beforeTag={beforeTag} afterTag={afterTag} />
               <div className="ba-label">Before</div>
               <ul>
                 {transformation.before.map((item, i) => (
@@ -236,7 +458,7 @@ function TransformationSection({ transformation }) {
           <div className="ba-arrow" aria-hidden="true">{ARROW}</div>
           <Reveal from="right" className="ba-reveal">
             <div className="ba-card ba-after">
-              <BaVisual mock={visual} tone="after" />
+              <BaVisual mock={visual} tone="after" beforeTag={beforeTag} afterTag={afterTag} />
               <div className="ba-label">After</div>
               <ul>
                 {transformation.after.map((item, i) => (

@@ -56,6 +56,8 @@ export const SERVICE_PAGES = {
       headline: 'Before → After',
       sub: 'A focused rebuild changes what your website does for you — from a digital brochure to a lead engine.',
       visual: 'browser',
+      beforeTag: 'Slow · Invisible',
+      afterTag: '<2s · Ranks',
       before: [
         '6+ second load time',
         'Not mobile-friendly',
@@ -170,6 +172,8 @@ export const SERVICE_PAGES = {
       headline: 'Before → After',
       sub: 'A user-first rebuild turns a frustrating download into a habit your customers rely on.',
       visual: 'phone',
+      beforeTag: 'Uninstalled',
+      afterTag: 'Weekly active',
       before: [
         'Uninstalled within days',
         'Single platform',
@@ -284,6 +288,8 @@ export const SERVICE_PAGES = {
       headline: 'Before → After',
       sub: 'Professional editing changes what your content does — from occasional posts to a compounding growth channel.',
       visual: 'video',
+      beforeTag: 'Skipped',
+      afterTag: 'Watched fully',
       before: [
         'Videos skipped in seconds',
         'No captions, no hook',
@@ -398,6 +404,8 @@ export const SERVICE_PAGES = {
       headline: 'Before → After',
       sub: 'From scattered, untracked activity to one measurable system that compounds month after month.',
       visual: 'chart',
+      beforeTag: 'Spend waste',
+      afterTag: 'ROAS 4.6x',
       before: [
         'Spend without returns',
         'Ranking for the wrong keywords',
@@ -512,6 +520,8 @@ export const SERVICE_PAGES = {
       headline: 'Before → After',
       sub: 'A custom web application turns fragmented manual work into one clear, automated system.',
       visual: 'dashboard',
+      beforeTag: 'Scattered',
+      afterTag: 'One system',
       before: [
         'Data in scattered files',
         'Hours of manual entry',
